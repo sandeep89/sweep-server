@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="/js/tracker.js"></script>
+		<script type="text/javascript">
+		function getRandomArbitrary() {
+			return Math.floor(Math.random() * 999999999);
+		}
+		function trackEvent() {
+			var tracker = new Tracker();
+			var event = tracker.createEvent({
+				id:getRandomArbitrary(),
+				name: document.getElementsByName("objectName").value
+			},{
+				id:getRandomArbitrary(),
+				name: document.getElementsByName("actionName").value
+			},{
+				id:getRandomArbitrary(),
+				name: document.getElementsByName("actorName").value
+			},{
+				id:getRandomArbitrary(),
+				name: document.getElementsByName("platformName").value
+			})
+			event.logEvent(function (response) {
+				console.log(response)
+			})
+		}
+		</script>
+	</head>
+	<body>
+		object name:<br>
+		<input type="text" name="objectName" >
+		<br>
+		action name:<br>
+		<input type="text" name="actionName" >
+		<br>
+		actor name:<br>
+		<input type="text" name="actorName" >
+		<br>
+		platform name:<br>
+		<input type="text" name="platformName" >
+		<br><br>
+		<input type="submit" value="LogEvent" onclick="trackEvent()">
+	</body>
+</html>
