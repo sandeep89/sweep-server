@@ -10,16 +10,16 @@
 			var tracker = new Tracker();
 			var event = tracker.createEvent({
 				id:getRandomArbitrary(),
-				name: document.getElementsByName("objectName").value
+				name: document.getElementById("objectName").value
 			},{
 				id:getRandomArbitrary(),
-				name: document.getElementsByName("actionName").value
+				name: document.getElementById("actionName").value
 			},{
 				id:getRandomArbitrary(),
-				name: document.getElementsByName("actorName").value
+				name: document.getElementById("actorName").value
 			},{
 				id:getRandomArbitrary(),
-				name: document.getElementsByName("platformName").value
+				name: document.getElementById("platformName").value
 			})
 			event.logEvent(function (response) {
 				console.log(response)
@@ -29,16 +29,16 @@
 	</head>
 	<body>
 		object name:<br>
-		<input type="text" name="objectName" >
+		<input type="text" id="objectName" >
 		<br>
 		action name:<br>
-		<input type="text" name="actionName" >
+		<input type="text" id="actionName" >
 		<br>
 		actor name:<br>
-		<input type="text" name="actorName" >
+		<input type="text" id="actorName" >
 		<br>
 		platform name:<br>
-		<input type="text" name="platformName" >
+		<input type="text" id="platformName" >
 		<br><br>
 		<input type="submit" value="LogEvent" onclick="trackEvent()">
 	</body>
